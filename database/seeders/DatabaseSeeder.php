@@ -28,37 +28,37 @@ class DatabaseSeeder extends Seeder
             'role' => 2
         ]);
 
-        DB::table('unit')->insert([
+        DB::table('units')->insert([
             'jurusan' => 'Universitas Universal'
         ]);
-        DB::table('unit')->insert([
+        DB::table('units')->insert([
             'jurusan' => 'Seni Tari'
         ]);
-        DB::table('unit')->insert([
+        DB::table('units')->insert([
             'jurusan' => 'Seni Musik'
         ]);
-        DB::table('unit')->insert([
+        DB::table('units')->insert([
             'jurusan' => 'Manajemen'
         ]);
-        DB::table('unit')->insert([
+        DB::table('units')->insert([
             'jurusan' => 'Akuntansi'
         ]);
-        DB::table('unit')->insert([
+        DB::table('units')->insert([
             'jurusan' => 'Pendidikan Bahasa Mandarin'
         ]);
-        DB::table('unit')->insert([
+        DB::table('units')->insert([
             'jurusan' => 'Teknik Informatika'
         ]);
-        DB::table('unit')->insert([
+        DB::table('units')->insert([
             'jurusan' => 'Sistem Informasi'
         ]);
-        DB::table('unit')->insert([
+        DB::table('units')->insert([
             'jurusan' => 'Teknik Perangkat Lunak'
         ]);
-        DB::table('unit')->insert([
+        DB::table('units')->insert([
             'jurusan' => 'Teknik Industri'
         ]);
-        DB::table('unit')->insert([
+        DB::table('units')->insert([
             'jurusan' => 'Teknik Lingkungan'
         ]);
 
