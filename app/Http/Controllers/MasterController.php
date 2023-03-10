@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Middleware\adminonly;
+use App\Models\Unit;
 // use App\Models\Books;
 // use App\Models\Categories;
 // use App\Models\Category;
@@ -27,9 +28,11 @@ class MasterController extends Controller
 
 {
     public function loginPage(){
-        return view('login');
-        $jurusan = Units::all();
+        // return view('login');
+        $jurusan = Unit::all();
+        dd($jurusan);
     }
+    /*
 
     public function homePage(){
         return view('template');
@@ -116,4 +119,5 @@ class MasterController extends Controller
 
 
     }
+    */
 }
