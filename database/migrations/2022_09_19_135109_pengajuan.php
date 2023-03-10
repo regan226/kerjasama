@@ -13,22 +13,25 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kerjasama', function (Blueprint $table) {
+        Schema::create('pengajuan', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("pengajuan_id")->constrained("pengajuan","id");
-            // $table->foreignId("dok_no")->constrained("pengajuan","dok_no");
             $table->string('dok_no');
             $table->string('dok_tipe');
-            $table->string('dok_dasar')->nullable();
             $table->string('mitra_nama');
-            $table->string('jurusan');
-            $table->integer('tingkat');
+            $table->string('mitra_deskripsi');
+            $table->string('mitra_alamat');
             $table->string('ks_judul');
+            $table->integer('tingkat');
             $table->string('ks_detail');
+            $table->string('pdt');
+            $table->string('pdt_jb');
+            $table->string('pdt_mitra');
+            $table->string('pdt_mitrajb');
+            $table->string('pdt_lokasi');
             $table->dateTime('dt_start');
             $table->dateTime('dt_end');
-            $table->string('ks_bukti')->nullable();
-            $table->string('ks_dokumen')->nullable();
+            $table->integer('status');
+            $table->string('jurusan');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -41,6 +44,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kerjasama');
+        Schema::dropIfExists('pengajuan');
     }
 };

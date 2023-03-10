@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('prodi', function (Blueprint $table) {
+        Schema::create('unitassigns', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('desc');
+            $table->foreignId("unit_id")->constrained("unit","id")->nullable();
+            // $table->foreignId("kerjasama_id")->constrained("kerjasama","id")->nullable();
+            $table->foreignId("pengajuan_id")->constrained("pengajuan","id")->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prodi');
+        Schema::dropIfExists('unitassigns');
     }
 };
