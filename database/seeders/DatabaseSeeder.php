@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        DB::table('pengajuan')->insert([
+        DB::table('pengajuans')->insert([
             'dok_no' => 'IMB0001',
             'dok_tipe' => 'MOU',
             'mitra_nama' => 'John',

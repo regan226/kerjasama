@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('kerjasamas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("pengajuan_id")->constrained("pengajuan","id");
+            $table->foreignId("pengajuan_id")->constrained("pengajuans","id");
             // $table->foreignId("dok_no")->constrained("pengajuan","dok_no");
             $table->string('dok_no');
             $table->string('dok_tipe');
@@ -41,6 +41,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kerjasama');
+        Schema::dropIfExists('kerjasamas');
     }
 };
