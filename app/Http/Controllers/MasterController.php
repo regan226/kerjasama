@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Middleware\adminonly;
+use App\Models\Pengajuan;
 use App\Models\Unit;
+use App\Models\Unitassign;
 // use App\Models\Books;
 // use App\Models\Categories;
 // use App\Models\Category;
@@ -28,14 +30,15 @@ class MasterController extends Controller
 
 {
     public function loginPage(){
-        // return view('login');
-        $jurusan = Unit::all();
-        dd($jurusan);
+        return view('login');
+        // $jurusan = Unit::all();
+        // dd($jurusan);
     }
-    /*
+    
 
     public function homePage(){
-        return view('template');
+        $jurusan = Unit::all();
+        return view('template',['jurusan' => $jurusan]);
     }
 
     public function viewDB($jurusan_id){
@@ -84,16 +87,16 @@ class MasterController extends Controller
     
     public function pengajuanAcc(){
         //panggil data pengajuan
-        $jurusan = Units::all();
+        $jurusan = Unit::all();
         $pengajuan = Pengajuan::all();
         return view('manageBook',['pengajuan' => $pengajuan]);
         return view('pengajuanAcc');
     }
 
     public function pengajuanAccDetail($pengajuan_id){
-        $jurusan = Units::all();
+        $jurusan = Unit::all();
         $pengajuan = Pengajuan::where('id',$pengajuan_id)->first();
-        $assign = unitAssigns::where('pengajuan_id',$pengajuan_id)->get();
+        $assign = Unitassign::where('pengajuan_id',$pengajuan_id)->get();
         return view('pengajuanAccDetail',['jurusan' => $jurusan, 'pengajuan'=>$pengajuan,'assign'=>$assign]);
     }
 
@@ -119,5 +122,5 @@ class MasterController extends Controller
 
 
     }
-    */
+    
 }

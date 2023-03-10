@@ -23,7 +23,7 @@
               @php
               $id = Auth::user()->id;
               @endphp
-                @if(Auth::user()->role_id == 1)
+                @if(Auth::user()->role == 1)
 
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{url('/inputMenu')}}">Input</a>
@@ -37,7 +37,7 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   @foreach ($jurusan as $j)
-                    <a class="dropdown-item" href="{{url('/viewDB/{{$j->id}}')}}">{{$j->jurusan}}</a>
+                    <a class="dropdown-item" href="url('/viewDB/{{$j->id}}')">{{$j->jurusan}}</a>
                   @endforeach
                 </li>
                   <li class="nav-item dropdown">
@@ -51,7 +51,7 @@
                   </li>
 
 
-                @elseif (Auth::user()->role_id == 2)
+                @elseif (Auth::user()->role == 2)
                 @php
                 $id = Auth::user()->id;    
                 @endphp
@@ -64,7 +64,7 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   @foreach ($jurusan as $j)
-                    <a class="dropdown-item" href="{{url('/viewDB/{{$j->id}}')}}">{{$j->jurusan}}</a>
+                    <a class="dropdown-item" href="url('/viewDB/{{$j->id}}')">{{$j->jurusan}}</a>
                   @endforeach
                 </li>
                 </li>
