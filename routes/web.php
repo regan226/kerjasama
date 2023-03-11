@@ -26,7 +26,7 @@ Route::post('/inputData', [MasterController::class, 'inputMenuSubmit']);
 Route::get('/pengajuanAcc', [MasterController::class, 'pengajuanAcc']);
 Route::get('/pengajuanAccDetail/{pengajuan_id}', [MasterController::class, 'pengajuanAccDetail']);
 Route::get('/pengajuanAccDetailBack', [MasterController::class, 'pengajuanAccDetailBack']);
-Route::get('/pengajuanAccExecute', [MasterController::class, 'pengajuanAccExecute']);
+Route::get('/pengajuanAccExecute/{pengajuanId}', [MasterController::class, 'pengajuanAccExecute']);
 
 Route::get('/pengajuanDelete/{pengajuan_id}', [MasterController::class, 'pengajuanDelete']);
 

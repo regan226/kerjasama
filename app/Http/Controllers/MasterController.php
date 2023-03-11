@@ -131,6 +131,12 @@ class MasterController extends Controller
     public function pengajuanAccExecute($pengajuanId){
         //update pengajuan ganti status ke Accepted, 
         // terus harus refresh page ?
+        // dd($pengajuanId);
+        $pengajuan = Pengajuan::where('id',$pengajuanId)->first();
+        $pengajuan->status = 2;
+        $pengajuan->save();
+
+        return redirect('/pengajuanAcc');
     }
 
     public function pengajuanInput(){
