@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('mitra_deskripsi');
             $table->string('mitra_alamat');
             $table->string('ks_judul');
-            $table->integer('tingkat');
+            $table->String('tingkat');
             $table->string('ks_detail');
             $table->string('pdt');
             $table->string('pdt_jb');

@@ -134,7 +134,7 @@ class MasterController extends Controller
     }
     public function pengajuanInputMenuExecute(Request $request){
 
-        dd($request);
+        // dd($request);
 
         // dok_no 
         // dok_tipe
@@ -157,12 +157,13 @@ class MasterController extends Controller
 
         $validateData = $request-> validate([
             'dokNo'=> 'required',
+            'dokTipe' => 'required',
             'mitraNama' => 'required',
             'mitraDeskripsi' => 'required',
             'mitraAlamat' => 'required',
-            'unitPelaksana' => 'required',
             'ksJudul' => 'required',
             'ksDetail' => 'required',
+            'tingkat' => 'required',
             'pdt' => 'required',
             'pdtJb' => 'required',
             'pdtMitra' => 'required',
@@ -171,19 +172,37 @@ class MasterController extends Controller
             'dtStart' => 'required',
             'dtEnd' => 'required'
         ]);
-
+        // dd( $validateData);
         $pengajuan = new Pengajuan();
         $pengajuan->dok_no =  $validateData['dokNo'];
-        $pengajuan->dok_no =  $validateData['dokNo'];
-        $pengajuan->dok_no =  $validateData['dokNo'];
-        $pengajuan->dok_no =  $validateData['dokNo'];
-        $pengajuan->dok_no =  $validateData['dokNo'];
-        $pengajuan->dok_no =  $validateData['dokNo'];
-        $pengajuan->dok_no =  $validateData['dokNo'];
-        $pengajuan->dok_no =  $validateData['dokNo'];
-        $pengajuan->dok_no =  $validateData['dokNo'];
+        $pengajuan->dok_tipe =  $validateData['dokTipe'];
+        $pengajuan->mitra_nama =  $validateData['mitraNama'];
+        $pengajuan->mitra_deskripsi =  $validateData['mitraDeskripsi'];
+        $pengajuan->mitra_alamat =  $validateData['mitraAlamat'];
+        $pengajuan->ks_judul =  $validateData['ksJudul'];
+        $pengajuan->ks_detail =  $validateData['ksDetail'];
+        $pengajuan->tingkat =  $validateData['tingkat'];
+        $pengajuan->pdt =  $validateData['pdt'];
+        $pengajuan->pdt_jb =  $validateData['pdtJb'];
+        $pengajuan->pdt_mitra =  $validateData['pdtMitra'];
+        $pengajuan->pdt_mitraJb =  $validateData['pdtMitraJb'];
+        $pengajuan->pdt_lokasi =  $validateData['pdtLokasi'];
+        $pengajuan->dt_start =  $validateData['dtStart'];
+        $pengajuan->dt_end =  $validateData['dtEnd'];
+        $pengajuan->status = 1;
+        $pengajuan->jurusan = "apapun";
+        $pengajuan->save();
 
-
+        
+        foreach($request->jurusan as $g){
+            $unit = new Unitassign();
+            $unit->unit_id = $g;
+            $unit->pengajuan_id = $pengajuan->id;
+            $unit->save(); 
+        }
+        $jurusan = Unit::all();
+        $pengajuan = Pengajuan::all();
+        return view('pengajuanInput',['jurusan' => $jurusan,'pengajuan' => $pengajuan]);
     }
 
     public function login(Request $request){

@@ -138,13 +138,15 @@
           <label for="jurusan" class="form-label">Jurusan</label>
       </div>
 
-      <div class="mb-5">
+      
+
+        <div class="form-check">
         @foreach ($jurusan as $j)
-          <div class="d-inline mx-2 ">
-            <input type="checkbox" name="{{$j->jurusan}}" id="{{$j->jurusan}}" value="{{$j->id}}">
-            <label for="{{$j->jurusan}}">{{$j->jurusan}}</label>
-          </div>
-        @endforeach
+            <label class="form-check-inline">
+                <input class="form-check-input" type="checkbox" name="jurusan[]" value="{{$j->id}}" > {{$j->jurusan}}
+            </label>
+            @endforeach
+            
         </div>
 
         <button type="submit w-100" class="btn btn-primary" value="insert">Save</button>
