@@ -83,7 +83,6 @@ class MasterController extends Controller
         $validateData = $request-> validate([
             'dokNo'=> 'required',
             'mitraNama' => 'required',
-            'unitPelaksana' => 'required',
             'ksJudul' => 'required',
             'ksDetail' => 'required',
             'dtStart' => 'required',
@@ -118,9 +117,56 @@ class MasterController extends Controller
     }
 
     public function pengajuanInput(){
-        return view('pengajuanInput');
+        $jurusan = Unit::all();
+        $pengajuan = Pengajuan::all();
+        return view('pengajuanInput',['jurusan' => $jurusan,'pengajuan' => $pengajuan]);
     }
+    public function pengajuanInputMenu(){
+        $jurusan = Unit::all();
+        $pengajuan = Pengajuan::all();
+        return view('pengajuanInputMenu',['jurusan' => $jurusan,'pengajuan' => $pengajuan]);
+    }
+    public function pengajuanInputMenuExecute(Request $request){
 
+        // dd($request);
+
+        // dok_no 
+        // dok_tipe
+        // mitra_nama
+        // mitra_deskripsi
+        // mitra_alamat
+        // ks_judul
+        // ks_detail
+        // tingkat
+        // pdt
+        // pdt_jb
+        // pdt_mitra
+        // pdt_mitrajb
+        // pdt_lokasi
+        // dt_start
+        // dt_end
+        // status (default 1, baru bisa diacc update jadi 2)
+        // jurusan (jurusan)
+
+
+        $validateData = $request-> validate([
+            'dokNo'=> 'required',
+            'mitraNama' => 'required',
+            'mitraDeskripsi' => 'required',
+            'mitraAlamat' => 'required',
+            'unitPelaksana' => 'required',
+            'ksJudul' => 'required',
+            'ksDetail' => 'required',
+            'pdt' => 'required',
+            'pdtJb' => 'required',
+            'pdtMitra' => 'required',
+            'pdtMitraJb' => 'required',
+            'pdtLokasi' => 'required',
+            'dtStart' => 'required',
+            'dtEnd' => 'required'
+        ]);
+
+    }
 
     public function login(Request $request){
         //kekmana cara return nya alert box ketika fail?

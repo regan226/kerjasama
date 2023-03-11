@@ -64,15 +64,6 @@
       </div>
 
       <div class="mb-3">
-          <label for="unitPelaksana" class="form-label">Unit Pelaksana</label>
-          <input type="text" class="form-control" id="unitPelaksana" name="unitPelaksana" >
-          @error('unitPelaksana')
-                        <span class="text-danger">{{ $message }}</span>
-          @enderror
-      </div>
-    
-
-      <div class="mb-3">
           <label for="tingkat" class="form-label">Tingkat</label>
           <select class="form-control" id="tingkat">
             <option id="1"> Internasional </option>

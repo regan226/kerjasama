@@ -28,7 +28,7 @@ Route::get('/pengajuanAccDetail', [MasterController::class, 'pengajuanAccDetail'
 Route::get('/pengajuanAccExecute', [MasterController::class, 'pengajuanAccExecute']);
 Route::get('/pengajuanInput', [MasterController::class, 'pengajuanInput']);
 Route::get('/pengajuanInputMenu', [MasterController::class, 'pengajuanInputMenu']);
-Route::get('/pengajuanInputExecute', [MasterController::class, 'pengajuanInputExecute']);
+Route::post('/pengajuanInputMenuExecute', [MasterController::class, 'pengajuanInputMenuExecute']);
 
 
 
