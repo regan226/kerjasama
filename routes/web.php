@@ -32,9 +32,9 @@ Route::post('/pengajuanInputMenuExecute', [MasterController::class, 'pengajuanIn
 
 
 
-Route::get('/viewDB/{unit_id}', [MasterController::class, 'viewDB']);
-Route::get('/viewDBDetail/{unit_id}', [MasterController::class, 'viewDBDetail']);
-Route::get('/viewDBDelete/{unit_id}', [MasterController::class, 'viewDBDelete']);
+Route::get('/viewDB/{units_id}', [MasterController::class, 'viewDB']);
+Route::get('/viewDBDetail/{units_id}', [MasterController::class, 'viewDBDetail']);
+Route::get('/viewDBDelete/{units_id}', [MasterController::class, 'viewDBDelete']);
 
 
 

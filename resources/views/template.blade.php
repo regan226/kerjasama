@@ -31,13 +31,13 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{url('/pengajuanAcc')}}">Pengajuan</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Database
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   @foreach ($jurusan as $j)
-                    <a class="dropdown-item" href="url('/viewDB/{{$j->id}}')">{{$j->jurusan}}</a>
+                    <a class="dropdown-item" href='/viewDB/{{$j->id}}'>{{$j->jurusan}}</a>
                   @endforeach
                 </li>
                   <li class="nav-item dropdown">
@@ -58,13 +58,13 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{url('/pengajuanInput')}}">Pengajuan</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Database
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   @foreach ($jurusan as $j)
-                    <a class="dropdown-item" href="url('/viewDB/{{$j->id}}')">{{$j->jurusan}}</a>
+                    <a class="dropdown-item" href='/viewDB/{{$j->id}}'>{{$j->jurusan}}</a>
                   @endforeach
                 </li>
                 </li>

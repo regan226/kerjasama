@@ -41,8 +41,10 @@ class MasterController extends Controller
         return view('template',['jurusan' => $jurusan]);
     }
 
-    public function viewDB($jurusan_id){
+    public function viewDB($units_id){
+        dd($units_id);
         //Select * From kerjasama untuk jurusan yang dipilih, baru tampilkan datanya di page
+
     }
 
     public function viewDBDetail($jurusan_id){
