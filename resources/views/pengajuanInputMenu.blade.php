@@ -119,7 +119,7 @@
 
       <div class="mb-3">
           <label for="dtStart" class="form-label">Tanggal Penandatangan</label>
-          <input type="text" class="form-control" id="dtStart" name="dtStart">
+          <input type="date" class="form-control" id="dtStart" name="dtStart" >
           @error('dtStart')
                         <span class="text-danger">{{ $message }}</span>
           @enderror
@@ -127,7 +127,7 @@
 
       <div class="mb-3">
           <label for="dtEnd" class="form-label">Tanggal Berakhir Kerjasama</label>
-          <input type="text" class="form-control" id="dtEnd" name="dtEnd">
+          <input type="date" class="form-control" id="dtEnd" name="dtEnd" >
           @error('dtEnd')
                         <span class="text-danger">{{ $message }}</span>
           @enderror

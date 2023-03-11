@@ -42,8 +42,12 @@ class MasterController extends Controller
     }
 
     public function viewDB($units_id){
-        dd($units_id);
+        // dd($units_id);
+
         //Select * From kerjasama untuk jurusan yang dipilih, baru tampilkan datanya di page
+
+        return view('viewDBMenu');
+
 
     }
 
