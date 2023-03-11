@@ -86,7 +86,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('unitassigns')->insert([
             'unit_id' => 1,
-            // 'kerjasama_id' => 1,
+            'kerjasama_id' => null,
             'pengajuan_id' => 1
         ]);
     }

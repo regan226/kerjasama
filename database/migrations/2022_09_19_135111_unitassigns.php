@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('unitassigns', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("unit_id")->constrained("units","id")->nullable();
-            // $table->foreignId("kerjasama_id")->constrained("kerjasamas","id")->nullable();
-            $table->foreignId("pengajuan_id")->constrained("pengajuans","id")->nullable();
+            $table->foreignId("unit_id")->nullable()->constrained("units","id");
+            $table->foreignId("kerjasama_id")->nullable()->constrained("kerjasamas","id");
+            $table->foreignId("pengajuan_id")->nullable()->constrained("pengajuans","id");
             $table->rememberToken();
             $table->timestamps();
         });
