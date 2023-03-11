@@ -2,7 +2,7 @@
 @section('content')
 <div class="container my-5 w-75 border p-5 shadow bg-light" style="">
   <h1 class="text-center mb-5">Detail Pengajuan</h1>
-  <form class="d-flex flex-column" enctype="multipart/form-data">
+  <form class="d-flex flex-column" enctype="multipart/form-data" action="/pengajuanInputDetailBack" method="post">
   <!-- keknya perlu ganti method? menu ini cuman buat liat detail pengajuan saja, gak buat modif" -->
   
       @csrf
@@ -109,7 +109,7 @@
                     
                 @endforeach
                 @if ($flag == false)
-                <input type="checkbox" name="{{$j->jurusan}}" disabled id="{{$j->jurusan}}">{{$j->jurusan}}
+                <input type="checkbox" name="{{$j->jurusan}}" disabled id="{{$j->jurusan}}"   >{{$j->jurusan}}
                 @endif
             @endforeach
         </div>

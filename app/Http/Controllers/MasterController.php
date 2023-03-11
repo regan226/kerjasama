@@ -135,6 +135,15 @@ class MasterController extends Controller
         $pengajuan = Pengajuan::all();
         return view('pengajuanInput',['jurusan' => $jurusan,'pengajuan' => $pengajuan]);
     }
+    public function pengajuanInputDetail($pengajuan_id){
+        $jurusan = Unit::all();
+        $pengajuan = Pengajuan::where('id',$pengajuan_id)->first();
+        $assign = Unitassign::where('pengajuan_id',$pengajuan_id)->get();
+        return view('pengajuanAccDetail',['jurusan' => $jurusan, 'pengajuan'=>$pengajuan,'assign'=>$assign]);
+    }
+    public function pengajuanInputDetailBack(){
+        return redirect('/pengajuanInput');
+    }
     public function pengajuanInputMenu(){
         $jurusan = Unit::all();
         $pengajuan = Pengajuan::all();

@@ -28,6 +28,8 @@ Route::get('/pengajuanAccDetail/{pengajuan_id}', [MasterController::class, 'peng
 Route::get('/pengajuanDelete/{pengajuan_id}', [MasterController::class, 'pengajuanDelete']);
 Route::get('/pengajuanAccExecute', [MasterController::class, 'pengajuanAccExecute']);
 Route::get('/pengajuanInput', [MasterController::class, 'pengajuanInput']);
+Route::get('/pengajuanInputDetail/{pengajuan_id}', [MasterController::class, 'pengajuanInputDetail']);
+Route::post('/pengajuanInputDetailBack', [MasterController::class, 'pengajuanInputDetailBack']);
 Route::get('/pengajuanInputMenu', [MasterController::class, 'pengajuanInputMenu']);
 Route::post('/pengajuanInputMenuExecute', [MasterController::class, 'pengajuanInputMenuExecute']);
 

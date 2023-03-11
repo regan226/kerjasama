@@ -30,7 +30,7 @@
             <!-- kekmana munculin periode kerjasama? -->
             <td>{{$pgj->dt_status}}</td>
               <td>
-                <a class="btn btn-secondary" href='/pengajuanAccDetail/{{$pgj->id}}' >View Detail</a>
+                <a class="btn btn-secondary" href='/pengajuanInputDetail/{{$pgj->id}}' >View Detail</a>
                 <a class="btn btn-danger" href='/pengajuanDelete/{{$pgj->id}}' >Delete</a>
               </td>
           </tr>
