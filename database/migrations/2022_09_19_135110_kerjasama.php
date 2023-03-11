@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('dok_tipe');
             $table->string('dok_dasar')->nullable();
             $table->string('mitra_nama');
-            $table->string('jurusan');
             $table->String('tingkat');
             $table->string('ks_judul');
             $table->string('ks_detail');

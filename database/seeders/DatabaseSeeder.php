@@ -80,7 +80,6 @@ class DatabaseSeeder extends Seeder
             'dt_start' => Carbon::create('2020', '01', '01'),
             'dt_end' => Carbon::create('2024', '01', '01'),
             'status' => '1',
-            'jurusan' => 'Universitas Universal'
 
         ]);
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Middleware\adminonly;
+use App\Models\Kerjasama;
 use App\Models\Pengajuan;
 use App\Models\Unit;
 use App\Models\Unitassign;
@@ -42,11 +43,17 @@ class MasterController extends Controller
     }
 
     public function viewDB($units_id){
+        $kerjasama = Kerjasama::where('id',$units_id)->get();
+        $jurusan = Unit::all();
+        // DB::table('units')
+        // ->join('unitassigns','units.id','=','unitassigns.unit_id')
+        // ->select('*')
+        // ->where('kerjasama_id',$kerjasama->id);
         // dd($units_id);
 
         //Select * From kerjasama untuk jurusan yang dipilih, baru tampilkan datanya di page
 
-        return view('databaseView');
+        return view('databaseView',['kerjasama'=>$kerjasama,'jurusan'=>$jurusan]);
 
 
     }
@@ -65,7 +72,8 @@ class MasterController extends Controller
 
     public function inputMenuView(){
         $jurusan = Unit::all();
-        return view('inputMenu',['jurusan' => $jurusan]);
+        $pengajuan = Pengajuan::all();
+        return view('inputMenu',['jurusan' => $jurusan,'pengajuan'=>$pengajuan]);
     }
 
     public function inputMenuSubmit(Request $request){
@@ -88,17 +96,61 @@ class MasterController extends Controller
 
         $validateData = $request-> validate([
             'dokNo'=> 'required',
-            'mitraNama' => 'required',
-            'ksJudul' => 'required',
-            'ksDetail' => 'required',
-            'dtStart' => 'required',
-            'dtEnd' => 'required'
+            'dokDasar' => 'nullable',
         ]);
+        $bukti = $request->file('ksBukti');
+        // dd($bukti->getclientoriginalname());
+        $doc = $request->file('ksDoc');
+
+        $pengajuan = Pengajuan::where('id',$validateData['dokNo'])->first();
+        $unit = Unitassign::where('pengajuan_id',$pengajuan->id)->get();
+
+
+        $kerjasama = new Kerjasama();
+        $kerjasama->pengajuan_id = $pengajuan->id;
+        $kerjasama->dok_no = $pengajuan->dok_no;
+        $kerjasama->dok_tipe = $pengajuan->dok_tipe;
+        $kerjasama->dok_dasar = $validateData['dokDasar'];
+        $kerjasama->mitra_nama = $pengajuan->mitra_nama;
+        $kerjasama->tingkat = $pengajuan->tingkat;
+        $kerjasama->ks_judul = $pengajuan->ks_judul;
+        $kerjasama->ks_detail = $pengajuan->ks_detail;
+        $kerjasama->dt_start = $pengajuan->dt_start;
+        $kerjasama->dt_end = $pengajuan->dt_end;
+
+        if($bukti !=null){
+            $file = $bukti;
+            $ext = $file->getClientOriginalExtension();
+            $namafile = $kerjasama->dok_no . "Bukti.". $ext;
+            // $path = $request->berkas->move('image',$namafile);
+            Storage::putFileAs('public/files',$file,$namafile);
+            $path = 'files/' . $namafile;
+            $kerjasama->ks_bukti = $path;
+        }
+
+        if($doc !=null){
+            $file = $doc;
+            $ext = $file->getClientOriginalExtension();
+            $namafile = $kerjasama->dok_no . "Doc.". $ext;
+            // $path = $request->berkas->move('image',$namafile);
+            Storage::putFileAs('public/files',$file,$namafile);
+            $path = 'files/' . $namafile;
+            $kerjasama->ks_dokumen = $path;
+        }
+
+        $kerjasama->save();
+
+        //update unit assign
+        foreach($unit as $u){
+            $US = Unitassign::where('id',$u->id)->first();
+            $US->kerjasama_id = $kerjasama->id;
+            $US->save();
+        }
 
         //----------------------------------------------------------------------------------
 
         //mau fitur pas manggil pengajuan, autofill ke respected fields (yang sama fieldnya)
-        
+        return redirect('/home');
 
     }
     

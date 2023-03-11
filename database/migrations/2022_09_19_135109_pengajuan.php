@@ -31,7 +31,6 @@ return new class extends Migration
             $table->dateTime('dt_start');
             $table->dateTime('dt_end');
             $table->integer('status');
-            $table->string('jurusan');
             $table->rememberToken();
             $table->timestamps();
         });

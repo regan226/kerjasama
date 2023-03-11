@@ -10,7 +10,6 @@
           <tr>
             <th scope="1">No</th>
             <th scope="1">Judul Kerjasama</th>
-            <th scope="1">Instansi</th>
             <th scope="1">Tingkat</th>
             <th scope="1">Masa Berlaku</th>  
             <th scope="1">Jenis Dokumen</th> 
@@ -23,7 +22,6 @@
             <td>1</td>
             <!-- kekmana bikin auto numbering? -->
             <td>{{$ks->ks_judul}}</td>
-            <td>{{$ks->jurusan}}</td>
             <td>{{$ks->tingkat}}</td>
             <td>{{$ks->dt_start}}</td>
             <!-- kekmana munculin periode kerjasama? -->
