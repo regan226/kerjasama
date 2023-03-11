@@ -1,6 +1,6 @@
 @extends('template')
 @section('content')
-<div class="container my-5 w-75 border p-5 shadow bg-light" style="">
+<div class="container my-5 w-75 border p-5 shadow bg-light" >
   <h1 class="text-center mb-5">Detail Pengajuan</h1>
   <form class="d-flex flex-column" enctype="multipart/form-data" action="/pengajuanInputDetailBack" method="post">
   <!-- keknya perlu ganti method? menu ini cuman buat liat detail pengajuan saja, gak buat modif" -->
@@ -114,7 +114,7 @@
             @endforeach
         </div>
 
-        <button type="submit w-100" class="btn btn-primary" value="insert">Close</button>
+        <button type="submit w-100" class="btn btn-primary" value="insert">back</button>
         <!-- kekmana mau tutup balek ke halamn selanjutnya ini mau lihat detail doang -->
         
     </form>
