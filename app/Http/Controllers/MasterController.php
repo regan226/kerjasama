@@ -117,8 +117,12 @@ class MasterController extends Controller
     }
 
     public function pengajuanDelete($pengajuan_id){
-        dd($pengajuan_id);
+        $unit = Unitassign::where('pengajuan_id',$pengajuan_id)->delete();
+
+        $pengajuan = Pengajuan::where('id',$pengajuan_id)->delete();
+
         //delete pengajuan
+        return redirect('/pengajuanInput');
     }
 
     public function pengajuanAccExecute($pengajuanId){
@@ -204,7 +208,6 @@ class MasterController extends Controller
             $unit->pengajuan_id = $pengajuan->id;
             $unit->save(); 
         }
-        $jurusan = Unit::all();
         $pengajuan = Pengajuan::all();
         return redirect('/pengajuanInput');
     }
