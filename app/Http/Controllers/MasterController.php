@@ -63,7 +63,7 @@ class MasterController extends Controller
     }
 
     public function inputMenuSubmit(Request $request){
-        dd($request);
+        // dd($request);
         //Submit ke SQL
         // id - PK (autogenerate?)
         // pengajuan_id FK (buat link ke pengajuan)
@@ -79,6 +79,16 @@ class MasterController extends Controller
         // dt_end - tgl end kerjasama
         // ks_bukti - format gambar
         // ks_dokumen - format pdf
+
+        $validateData = $request-> validate([
+            'dokNo'=> 'required',
+            'mitraNama' => 'required',
+            'unitPelaksana' => 'required',
+            'ksJudul' => 'required',
+            'ksDetail' => 'required',
+            'dtStart' => 'required',
+            'dtEnd' => 'required'
+        ]);
 
         //----------------------------------------------------------------------------------
 

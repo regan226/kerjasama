@@ -8,6 +8,9 @@
       <div class="mb-3">
         <label for="dokNo" class="form-label">No Dokumen</label>
         <input type="text" class="form-control" id="dokNo" name="dokNo" >
+        @error('dokNo')
+                        <span class="text-danger">{{ $message }}</span>
+        @enderror
         <!-- pakai foreach mau panggil semua pengajuan yang status "ACCEPT", baru formnya autofill tapi masih bisa diedit gitu -->
       </div>
 
