@@ -206,7 +206,7 @@ class MasterController extends Controller
         }
         $jurusan = Unit::all();
         $pengajuan = Pengajuan::all();
-        return view('pengajuanInput',['jurusan' => $jurusan,'pengajuan' => $pengajuan]);
+        return redirect('/pengajuanInput');
     }
 
     public function login(Request $request){
