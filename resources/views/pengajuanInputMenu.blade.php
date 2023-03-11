@@ -99,24 +99,12 @@
       </div>
 
       <div class="mb-5">
-            @foreach ($jurusan as $j)
-                @php
-                $flag = false
-                @endphp
-                @foreach ($assign as $a)
-                    @if($j->id == $a->unit_id)
-                    <input type="checkbox" name="{{$j->jurusan}}" id="{{$j->jurusan}}" checked  >{{$j->jurusan}}
-                    @php
-                    $flag = true
-                    @endphp
-                    @break
-                    @endif
-                    
-                @endforeach
-                @if ($flag == false)
-                <input type="checkbox" name="{{$j->jurusan}}" id="{{$j->jurusan}}"   >{{$j->jurusan}}
-                @endif
-            @endforeach
+        @foreach ($jurusan as $j)
+          <div class="d-inline mx-2 ">
+            <input type="checkbox" name="{{$j->jurusan}}" id="{{$j->jurusan}}" value="{{$j->id}}">
+            <label for="{{$j->jurusan}}">{{$j->jurusan}}</label>
+          </div>
+        @endforeach
         </div>
 
         <button type="submit w-100" class="btn btn-primary" value="insert">Save</button>

@@ -32,6 +32,7 @@
       <div id="baseNotMou"class="mb-3" style="display:none;">
           <label for="dokDasar" class="form-label">Dasar Dokumen</label>
           <input type="text" class="form-control" id="dokDasar" name="dokDasar" >
+          
           <!-- Ini buat masukin nomor dokumen MOU, pilihan ini muncul kalau jenis dokumen nya MOA / IA -->
       </div>
 
@@ -57,12 +58,19 @@
       <div class="mb-3">
           <label for="mitraNama" class="form-label">Nama Mitra</label>
           <input type="text" class="form-control" id="mitraNama" name="mitraNama" >
+          @error('mitraNama')
+                        <span class="text-danger">{{ $message }}</span>
+          @enderror
       </div>
 
       <div class="mb-3">
           <label for="unitPelaksana" class="form-label">Unit Pelaksana</label>
           <input type="text" class="form-control" id="unitPelaksana" name="unitPelaksana" >
+          @error('unitPelaksana')
+                        <span class="text-danger">{{ $message }}</span>
+          @enderror
       </div>
+    
 
       <div class="mb-3">
           <label for="tingkat" class="form-label">Tingkat</label>
@@ -76,31 +84,49 @@
       <div class="mb-3">
           <label for="ksJudul" class="form-label">Judul Kerjasama</label>
           <input type="text" class="form-control" id="ksJudul" name="ksJudul" >
+          @error('ksJudul')
+                        <span class="text-danger">{{ $message }}</span>
+          @enderror
       </div>
 
       <div class="mb-5">
           <label for="ksDetail" class="form-label">Bentuk Kegiatan</label>
           <textarea class="form-control" id="ksDetail" name="ksDetail" rows="5"></textarea>
+          @error('ksDetail')
+                        <span class="text-danger">{{ $message }}</span>
+          @enderror
       </div>
 
       <div class="mb-3">
           <label for="dtStart" class="form-label">Tanggal Mulai</label>
           <input type="date" class="form-control" id="dtStart" name="dtStart" >
+          @error('dtStart')
+                        <span class="text-danger">{{ $message }}</span>
+          @enderror
       </div>
       <div class="mb-3">
           <label for="dtEnd" class="form-label">Tanggal Berakhir</label>
           <input type="date" class="form-control" id="dtEnd" name="dtEnd" >
+          @error('dtEnd')
+                        <span class="text-danger">{{ $message }}</span>
+          @enderror
       </div>
 
       <label for="ksBukti">Bukti Realisasi Kerjasama</label>
       <div class="form-group mb-3 border border-dark d-flex">
         <input type="file" class="form-control-file" id="ksBukti" name="ksBukti" onchange="loadFile(event)" style="border:none">
+          @error('ksBukti')
+                        <span class="text-danger">{{ $message }}</span>
+          @enderror
       </div>
         <img id="output" >
       
       <label for="ksDoc">Upload Dokumen</label>
       <div class="form-group mb-3 border border-dark d-flex">
         <input type="file" class="form-control-file" id="ksDoc" name="ksDoc" onchange="loadFile(event)" style="border:none">
+          @error('ksDoc')
+                        <span class="text-danger">{{ $message }}</span>
+          @enderror
       </div>
         <img id="output" >
 
