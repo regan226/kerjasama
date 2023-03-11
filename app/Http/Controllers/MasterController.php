@@ -46,7 +46,7 @@ class MasterController extends Controller
 
         //Select * From kerjasama untuk jurusan yang dipilih, baru tampilkan datanya di page
 
-        return view('viewDBMenu');
+        return view('databaseView');
 
 
     }
@@ -106,7 +106,6 @@ class MasterController extends Controller
         //panggil data pengajuan
         $jurusan = Unit::all();
         $pengajuan = Pengajuan::all();
-        return view('manageBook',['pengajuan' => $pengajuan]);
         return view('pengajuanAcc');
     }
 
@@ -115,6 +114,11 @@ class MasterController extends Controller
         $pengajuan = Pengajuan::where('id',$pengajuan_id)->first();
         $assign = Unitassign::where('pengajuan_id',$pengajuan_id)->get();
         return view('pengajuanAccDetail',['jurusan' => $jurusan, 'pengajuan'=>$pengajuan,'assign'=>$assign]);
+    }
+
+    public function pengajuanDelete($pengajuan_id){
+        dd($pengajuan_id);
+        //delete pengajuan
     }
 
     public function pengajuanAccExecute($pengajuanId){

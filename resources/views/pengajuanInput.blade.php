@@ -15,6 +15,7 @@
             <th scope="1">Tingkat</th>
             <th scope="1">Tanggal Pengajuan</th>  
             <th scope="1">Status</th> 
+            <th scope="1">Aksi</th> 
           </tr>
         </thead>
         <tbody>
@@ -28,6 +29,10 @@
             <td>{{$pgj->dt_start}}</td>
             <!-- kekmana munculin periode kerjasama? -->
             <td>{{$pgj->dt_status}}</td>
+              <td>
+                <a class="btn btn-secondary" href='/pengajuanAccDetail/{{$pgj->id}}' >View Detail</a>
+                <a class="btn btn-danger" href='/pengajuanDelete/{{$pgj->id}}' >Delete</a>
+              </td>
           </tr>
           @endforeach
         </tbody>

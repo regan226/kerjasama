@@ -29,8 +29,8 @@
             <!-- kekmana munculin periode kerjasama? -->
             <td>{{$ks->dt_end}}</td>
             <td>
-              <a class="btn btn-secondary" href="{{url('/viewDBDetail/$ks->id')}}" >View Detail</a>
-              <a class="btn btn-danger" href="{{url('/viewDBDelete/$ks->id')}}" >Delete</a>
+              <a class="btn btn-secondary" href='/viewDBDetail/{{$ks->id}}' >View Detail</a>
+              <a class="btn btn-danger" href='{{url('/viewDBDelete/$ks->id')}}' >Delete</a>
             </td>
           </tr>
           @endforeach
