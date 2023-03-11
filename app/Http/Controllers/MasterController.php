@@ -72,7 +72,7 @@ class MasterController extends Controller
 
     public function inputMenuView(){
         $jurusan = Unit::all();
-        $pengajuan = Pengajuan::all();
+        $pengajuan = Pengajuan::where('status',2)->get();
         return view('inputMenu',['jurusan' => $jurusan,'pengajuan'=>$pengajuan]);
     }
 
@@ -103,6 +103,8 @@ class MasterController extends Controller
         $doc = $request->file('ksDoc');
 
         $pengajuan = Pengajuan::where('id',$validateData['dokNo'])->first();
+        $pengajuan->status = 3;
+        $pengajuan->save();
         $unit = Unitassign::where('pengajuan_id',$pengajuan->id)->get();
 
 
