@@ -58,7 +58,8 @@ class MasterController extends Controller
 
 
     public function inputMenuView(){
-        return view('inputMenu');
+        $jurusan = Unit::all();
+        return view('inputMenu',['jurusan' => $jurusan]);
     }
 
     public function inputMenuSubmit(){
