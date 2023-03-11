@@ -62,7 +62,8 @@ class MasterController extends Controller
         return view('inputMenu',['jurusan' => $jurusan]);
     }
 
-    public function inputMenuSubmit(){
+    public function inputMenuSubmit(Request $request){
+        dd($request);
         //Submit ke SQL
         // id - PK (autogenerate?)
         // pengajuan_id FK (buat link ke pengajuan)

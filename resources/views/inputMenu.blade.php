@@ -101,6 +101,19 @@
       </div>
         <img id="output" >
 
+      <div class="mb-5">
+            <!-- @foreach ($jurusan as $j)
+              <input type="checkbox" name="{{$j->jurusan}}" id="{{$j->jurusan}}" style="margin:10px;" >{{$j->jurusan}}
+            @endforeach -->
+
+            @foreach ($jurusan as $j)
+          <div class="d-inline mx-2 ">
+            <input type="checkbox" name="{{$j->jurusan}}" id="{{$j->jurusan}}" value="{{$j->id}}">
+            <label for="{{$j->jurusan}}">{{$j->jurusan}}</label>
+          </div>
+          @endforeach
+        </div>
+
       <button type="submit w-100" class="btn btn-primary" value="insert">Input</button>
     </form>
     

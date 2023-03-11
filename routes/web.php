@@ -21,7 +21,7 @@ Route::post('/login',[MasterController::class, 'login']);
 Route::get('/home', [MasterController::class, 'homePage']);
 
 Route::get('/inputMenu', [MasterController::class, 'inputMenuView']);
-Route::get('/inputData', [MasterController::class, 'inputMenuSubmit']);
+Route::post('/inputData', [MasterController::class, 'inputMenuSubmit']);
 
 Route::get('/pengajuanAcc', [MasterController::class, 'pengajuanAcc']);
 Route::get('/pengajuanAccDetail', [MasterController::class, 'pengajuanAccDetail']);
