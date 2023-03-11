@@ -18,10 +18,10 @@
 
         <div class="mb-3">
           <label for="dokTipe" class="form-label">Jenis Dokumen</label>
-          <select class="form-control" id="dokTipe" onchange="typeCheck(dokTipe)">
-            <option id="MOU"> MOU </option>
-            <option id="MOA"> MOA </option>
-            <option id="IA"> IA </option>
+          <select class="form-control" id="dokTipe" name="dokTipe">
+            <option value="MOU"> MOU </option>
+            <option value="MOA"> MOA </option>
+            <option value="IA"> IA </option>
           </select>
         </div>
 
@@ -65,14 +65,17 @@
           @enderror
       </div>
 
+
       <div class="mb-3">
-          <label for="tingkat" class="form-label">Tingkat</label>
-          <select class="form-control" id="tingkat">
-            <option id="Internasional"> Internasional </option>
-            <option id="Nasional"> Nasional </option>
-            <option id="Wilayah"> Wilayah </option>
+          <label for="tingkat" class="form-label">Jenis Dokumen</label>
+          <select class="form-control" id="tingkat" name="tingkat">
+            <option value="Internasional"> Internasional </option>
+            <option value="Nasional"> Nasional </option>
+            <option value="Wilayah"> Wilayah </option>
           </select>
-      </div>
+        </div>
+
+      
 
       <div class="mb-3">
           <label for="pdt" class="form-label">Nama Pejabat Penandatangan</label>

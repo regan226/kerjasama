@@ -128,7 +128,7 @@ class MasterController extends Controller
     }
     public function pengajuanInputMenuExecute(Request $request){
 
-        // dd($request);
+        dd($request);
 
         // dok_no 
         // dok_tipe
@@ -165,6 +165,18 @@ class MasterController extends Controller
             'dtStart' => 'required',
             'dtEnd' => 'required'
         ]);
+
+        $pengajuan = new Pengajuan();
+        $pengajuan->dok_no =  $validateData['dokNo'];
+        $pengajuan->dok_no =  $validateData['dokNo'];
+        $pengajuan->dok_no =  $validateData['dokNo'];
+        $pengajuan->dok_no =  $validateData['dokNo'];
+        $pengajuan->dok_no =  $validateData['dokNo'];
+        $pengajuan->dok_no =  $validateData['dokNo'];
+        $pengajuan->dok_no =  $validateData['dokNo'];
+        $pengajuan->dok_no =  $validateData['dokNo'];
+        $pengajuan->dok_no =  $validateData['dokNo'];
+
 
     }
 
