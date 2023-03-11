@@ -12,8 +12,10 @@
             <th scope="1">Judul Kerjasama</th>
             <th scope="1">Instansi</th>
             <th scope="1">Tingkat</th>
-            <th scope="1">Masa Berlaku</th>  
+            <th scope="1">Tanggal Mulai</th>  
+            <th scope="1">Tanggal Berakhir</th>  
             <th scope="1">Jenis Dokumen</th> 
+            <th scope="1">Status</th> 
             <th scope="1">Aksi</th>
           </tr>
         </thead>
@@ -26,11 +28,13 @@
             <td>{{$pgj->jurusan}}</td>
             <td>{{$pgj->tingkat}}</td>
             <td>{{$pgj->dt_start}}</td>
+            <td> {{$pgj->dt_end}}</td>
             <!-- kekmana munculin periode kerjasama? -->
-            <td>{{$pgj->dt_end}}</td>
+            <td>{{$pgj->dok_tipe}}</td>
+            <td>{{$pgj->status}}</td>
             <td>
-              <a class="btn btn-secondary" href="{{url('/pengajuanAccDetail/$pgj->id')}}" >View Detail</a>
-              <a class="btn btn-danger" href="{{url('/pengajuanAccExecute/$pgj->id')}}" >Accept</a>
+              <a class="btn btn-secondary" href='/pengajuanAccDetail/{{$pgj->id}}'>View Detail</a>
+              <a class="btn btn-primary" href='/pengajuanAccExecute/{{$pgj->id}}' >Accept</a>
             </td>
           </tr>
           @endforeach

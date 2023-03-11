@@ -106,7 +106,7 @@ class MasterController extends Controller
         //panggil data pengajuan
         $jurusan = Unit::all();
         $pengajuan = Pengajuan::all();
-        return view('pengajuanAcc');
+        return view('pengajuanAcc',['jurusan' => $jurusan, 'pengajuan' => $pengajuan]);
     }
 
     public function pengajuanAccDetail($pengajuan_id){
@@ -114,6 +114,9 @@ class MasterController extends Controller
         $pengajuan = Pengajuan::where('id',$pengajuan_id)->first();
         $assign = Unitassign::where('pengajuan_id',$pengajuan_id)->get();
         return view('pengajuanAccDetail',['jurusan' => $jurusan, 'pengajuan'=>$pengajuan,'assign'=>$assign]);
+    }
+    public function pengajuanAccDetailBack(){
+        return redirect('/pengajuanAcc');
     }
 
     public function pengajuanDelete($pengajuan_id){
