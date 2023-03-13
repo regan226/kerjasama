@@ -1,7 +1,7 @@
 @extends('template')
 @section('content')
 <div class="container my-5 w-75 border p-5 shadow bg-light" style="">
-  <h1 class="text-center mb-1">Kerjasama Program, MASUKIN NAMA JURUSAN</h1>
+  <h1 class="text-center mb-1">Kerjasama Program, INPUT KERJASAMA BARU</h1>
   <form class="d-flex flex-column" enctype="multipart/form-data">
     @csrf
     <div >

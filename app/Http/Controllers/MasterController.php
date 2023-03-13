@@ -159,7 +159,8 @@ class MasterController extends Controller
     public function pengajuanAcc(){
         //panggil data pengajuan
         $jurusan = Unit::all();
-        $pengajuan = Pengajuan::all();
+        // $pengajuan = Pengajuan::all();
+        $pengajuan = Pengajuan::where('status',1)->get();
         return view('pengajuanAcc',['jurusan' => $jurusan, 'pengajuan' => $pengajuan]);
     }
 
