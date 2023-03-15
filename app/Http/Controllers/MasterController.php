@@ -43,17 +43,18 @@ class MasterController extends Controller
     }
 
     public function viewDB($units_id){
-        $kerjasama = Kerjasama::where('id',$units_id)->get();
+        //$kerjasama = Kerjasama::where('id',$units_id)->get();
+        $unit = Unit::where('id',$units_id)->first();
         $jurusan = Unit::all();
-        // DB::table('units')
-        // ->join('unitassigns','units.id','=','unitassigns.unit_id')
-        // ->select('*')
-        // ->where('kerjasama_id',$kerjasama->id);
-        // dd($units_id);
+        $kerjasama = DB::table('kerjasamas')
+        ->join('unitassigns','kerjasamas.id','=','unitassigns.kerjasama_id')
+        ->select('kerjasamas.*')
+        ->where('unit_id',$units_id)->get();
+        // dd($unit);
 
         //Select * From kerjasama untuk jurusan yang dipilih, baru tampilkan datanya di page
 
-        return view('databaseView',['kerjasama'=>$kerjasama,'jurusan'=>$jurusan]);
+        return view('databaseView',['kerjasama'=>$kerjasama,'jurusan'=>$jurusan,'unit'=>$unit]);
 
 
     }
@@ -271,7 +272,6 @@ class MasterController extends Controller
         $pengajuan->dt_start =  $validateData['dtStart'];
         $pengajuan->dt_end =  $validateData['dtEnd'];
         $pengajuan->status = 1;
-        $pengajuan->jurusan = "apapun";
         $pengajuan->save();
 
         
