@@ -93,8 +93,7 @@
     </div>
     <footer class="footer">
       <div class="container-fluid bg-light fixed-bottom">
-        <p style="margin: 0">Current and time : <span id="outDate"></span></p>
-        <p class="text-center" >Copyright &#169 KAMPUS KONTOL{{date('Y')}}</p>
+        <p class="text-center" >Copyright &#169 Universitas Universal {{date('Y')}}</p>
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

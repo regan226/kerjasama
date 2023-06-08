@@ -17,6 +17,7 @@ use App\Http\Controllers\MasterController;
 Route::get('/', [MasterController::class, 'loginPage']);
 
 Route::post('/login',[MasterController::class, 'login']);
+Route::get('/logout',[MasterController::class, 'logout']);
 
 Route::get('/home', [MasterController::class, 'homePage']);
 

@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         DB::table('users')->insert([
-            'username' => 'babu',
+            'username' => 'staff',
             'password' => bcrypt('1234qwer'),
             'role' => 2
         ]);

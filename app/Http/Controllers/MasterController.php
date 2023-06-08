@@ -297,5 +297,9 @@ class MasterController extends Controller
 
 
     }
+
+    public function logout(){
+        return redirect('/');
+    }
     
 }
